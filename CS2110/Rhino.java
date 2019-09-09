@@ -10,13 +10,13 @@ public class Rhino {
     private char gender;
     /** Year of birth. Can be any integer. */
     private int year;
-    /** Month of birth. 1 for Jan, 2 for Feb, â€¦, 12 for Dec. */
+    /** Month of birth. 1 for Jan, 2 for Feb, …, 12 for Dec. */
     private int month;
     /** Number of known children of this Rhino, >=0 */
     private int children;
-    /** Mother of this rhino â€”null if unknown. */
+    /** Mother of this rhino —null if unknown. */
     private Rhino mom;
-    /** Father of this rhino â€”null if unknown. */
+    /** Father of this rhino —null if unknown. */
     private Rhino pop;
 
     /** Constructor: a new Rhino with name n, birth year y, birth month m, and gender g.<br>
@@ -37,6 +37,30 @@ public class Rhino {
 
     }
 
+    /** Constructor: a new Rhino with name n, birth year y, birth month m, gender g,<br>
+     * mother mother, father father, and no children.<br>
+     * Precondition: n has at least one character in it, m is 1 for Jan, 2 for Feb, etc., <br>
+     * g is 'F' or 'M' for female or male, and <br>
+     * mother is non-null and female, and <br>
+     * father is non-null and male). */
+
+    // Group C
+    public Rhino(String n, char g, int y, int m, Rhino mother, Rhino father) {
+        assert n != null && n.length() > 0;
+        assert g == 'M' | g == 'F';
+        assert m <= 12;
+        assert mother != null;
+        assert mother.isFemale() == true;
+        assert father != null;
+        assert father.isFemale() == false;
+        name= n;
+        gender= g;
+        year= y;
+        month= m;
+        mom= null;
+        pop= null;
+        children= 0;
+    }
 //Group A methods
 
     /** = the name of this rhino. */
@@ -78,23 +102,22 @@ public class Rhino {
     /** Set the rhino's mom to mother.<br>
      * Precondition: this rhino's mom is null and mother is not null and<br>
      * mother is female. */
-    public void setMom(Rhino R) {
+    public void setMom(Rhino mother) {
         assert mom == null;
-        assert R.getMom() != null;
-        assert R.getMom().isFemale() == true;
-        mom= R;
+        assert mother != null;
+        assert mother.isFemale() == true;
+        mom= mother;
 
     }
 
     /** Set this rhino's dad to father.<br>
      * Precondition: this rhino's dad is null and father is not null and<br>
      * father is male. */
-    public void setPop(Rhino R) {
+    public void setPop(Rhino father) {
         assert pop == null;
-        assert R.getPop() != null;
-        assert R.getPop().isFemale() == false;
-        pop= R;
+        assert father != null;
+        assert father.isFemale() == false;
+        pop= father;
     }
-//Group C
 
 }

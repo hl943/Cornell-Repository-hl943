@@ -14,4 +14,19 @@ public class RhinoTest {
 
     }
 
+    @Test
+    public void testConstructor2() {
+        Rhino R2= new Rhino("something", 'F', 1998, 11);
+        Rhino R3= new Rhino("anything", 'M', 1997, 11);
+        Rhino R4= new Rhino("nothing", 'M', 1996, 11, R2, R3);
+        assertEquals("nothing", R4.getName());
+        assertEquals(false, R4.isFemale());
+        assertEquals(1996, R4.getYOB());
+        assertEquals(11, R4.getMOB());
+
+        R4.setMom(R2);
+        R4.setPop(R3);
+        assertEquals(R4.getMom().getName(), "something");
+        assertEquals(R4.getPop().getName(), "anything");
+    }
 }
