@@ -10,13 +10,13 @@ public class Rhino {
     private char gender;
     /** Year of birth. Can be any integer. */
     private int year;
-    /** Month of birth. 1 for Jan, 2 for Feb, …, 12 for Dec. */
+    /** Month of birth. 1 for Jan, 2 for Feb, â€¦, 12 for Dec. */
     private int month;
     /** Number of known children of this Rhino, >=0 */
     private int children;
-    /** Mother of this rhino —null if unknown. */
+    /** Mother of this rhino â€”null if unknown. */
     private Rhino mom;
-    /** Father of this rhino —null if unknown. */
+    /** Father of this rhino â€”null if unknown. */
     private Rhino pop;
 
     /** Constructor: a new Rhino with name n, birth year y, birth month m, and gender g.<br>
@@ -61,14 +61,12 @@ public class Rhino {
 
     /** = (pointer to) the object for mother of this rhino. */
     public Rhino getMom() {
-        Rhino mother;
-        return mother;
+        return mom;
     }
 
     /** = (pointer to) the object for father of this rhino. */
     public Rhino getPop() {
-        Rhino father;
-        return father;
+        return pop;
     }
 
     /** = the number of known children of this rhino. */
@@ -84,7 +82,7 @@ public class Rhino {
         assert mom == null;
         assert R.getMom() != null;
         assert R.getMom().isFemale() == true;
-        mom= R.getMom();
+        mom= R;
 
     }
 
@@ -95,7 +93,7 @@ public class Rhino {
         assert pop == null;
         assert R.getPop() != null;
         assert R.getPop().isFemale() == false;
-        pop= R.getPop();
+        pop= R;
     }
 //Group C
 
