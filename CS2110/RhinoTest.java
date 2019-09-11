@@ -34,10 +34,10 @@ public class RhinoTest {
         //check that expected in birth month is computed by getMOB
         assertEquals(11, R4.getMOB());
         
-        //setting R4 mom and pop with R2 and R3 respectively
+        //testing the setting of R4's mom and pop with R2 and R3 respectively
         R4.setMom(R2);
         R4.setPop(R3);
-        
+              
         assertEquals(R4.getMom().getName(), "something");
         assertEquals(R4.getPop().getName(), "anything");
         assertEquals(R4.getMom().isFemale(), true);
