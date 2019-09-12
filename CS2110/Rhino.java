@@ -1,7 +1,7 @@
 /** NetId: nnnnn, nnnnn. Time spent: hh hours, mm minutes.
-* What I thought about this assignment:
-*
-*/
+ * What I thought about this assignment:
+ *
+ */
 /** An instance maintains info about the Rhino. */
 public class Rhino {
     /** Name of this rhino. Must contain at least 1 character. */
@@ -61,7 +61,7 @@ public class Rhino {
         pop= null;
         children= 0;
     }
-//Group A methods
+    // Group A methods
 
     /** = the name of this rhino. */
     public String getName() {
@@ -98,7 +98,7 @@ public class Rhino {
         return children;
     }
 
-//Group B methods
+    // Group B methods
     /** Set the rhino's mom to mother.<br>
      * Precondition: this rhino's mom is null and mother is not null and<br>
      * mother is female. */
@@ -120,4 +120,21 @@ public class Rhino {
         pop= father;
     }
 
+    // There should be some functions to set the number of children?
+
+    // Group D methods
+    /** = "r is not null and this rhino was born before r"<br>
+     * Precondition: r is not null. */
+    public boolean isOlder(Rhino r) {
+        assert r != null;
+        return year < r.getYOB() || year == r.getYOB() && month < r.getMOB();
+    }
+
+    /** = "this rhino and r are siblings" <br>
+     * Precondition: r is not null. */
+    public boolean areSiblings(Rhino r) {
+        assert r != null;
+        return this != r && (mom != null && r.getMom() != null && mom == r.getMom() ||
+            pop != null && r.getPop() != null && pop == r.getPop());
+    }
 }
