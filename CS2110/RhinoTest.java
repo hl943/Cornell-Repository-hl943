@@ -212,7 +212,7 @@ public class RhinoTest {
         assertThrows(AssertionError.class,
             () -> { new Rhino("mollie", 'F', 1990, 12, Rmom2, Rdad2); });
 
-        // Assert staement testing for group D methods
+        // Assert statement testing for group D methods
         // input param for areSiblings is null
         assertThrows(AssertionError.class, () -> { Rha.areSiblings(null); });
 
