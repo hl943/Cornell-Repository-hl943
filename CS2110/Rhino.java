@@ -1,38 +1,31 @@
-/** NetId: amd439 Time spent: 06 hours 30 minutes
+/** NetId: amd439, hl943 Time spent: 06 hours 30 minutes
  *
  * What I thought about this assignment:
  *
  *
- * /** An instance maintains info about the Rhino. */
+ * An instance maintains info about the Rhino. */
 
 public class Rhino {
 
     /** Name of this rhino. Must contain at least 1 character. */
-
     private String name;
 
     /** Gender of this rhino. 'F' for female, 'M' for male. */
-
     private char gender;
 
     /** Year of birth. Can be any integer. */
-
     private int year;
 
-    /** Month of birth. 1 for Jan, 2 for Feb, â€¦, 12 for Dec. */
-
+    /** Month of birth. 1 for Jan, 2 for Feb, …, 12 for Dec. */
     private int month;
 
-    /** Number of known children of this Rhino, >=0 */
-
+    /** Number of known children of this Rhino */
     private int children;
 
-    /** Mother of this rhino â€”null if unknown. */
-
+    /** Mother of this rhino —null if unknown. */
     private Rhino mom;
 
-    /** Father of this rhino â€”null if unknown. */
-
+    /** Father of this rhino —null if unknown. */
     private Rhino pop;
 
     /** Constructor: a new Rhino with name n, birth year y, birth month m, and gender g. * Its
@@ -40,25 +33,15 @@ public class Rhino {
      * character in it, m is 1 for Jan, 2 for Feb, etc., and g is 'F' or 'M' for female or male */
 
     public Rhino(String n, char g, int y, int m) {
-
         assert n != null && n.length() > 0;
-
         assert g == 'M' | g == 'F';
-
         assert m <= 12;
-
         name= n;
-
         gender= g;
-
         year= y;
-
         month= m;
-
         mom= null;
-
         pop= null;
-
         children= 0;
 
     }
@@ -69,18 +52,13 @@ public class Rhino {
      * or 'M' for female or male, and mother is non-null and female, and father is non-null and
      * male). */
 
-// Group C methods
+// Group C constructors
 
     public Rhino(String n, char g, int y, int m, Rhino mother, Rhino father) {
-
-        this(n, g, y, m); // calling from constructor 1 preconditions
-
+        this(n, g, y, m);
         assert mother != null;
-
         assert mother.isFemale() == true;
-
         assert father != null;
-
         assert father.isFemale() == false;
 
     }
@@ -88,43 +66,36 @@ public class Rhino {
 //Group A methods
 
     /** = the name of this rhino. */
-
     public String getName() {
         return name;
     }
 
     /** = this Rhino is female */
-
     public boolean isFemale() {
         return gender == 'F';
     }
 
     /** = the month this rhino was born in the range 1..12. */
-
     public int getMOB() {
         return month;
     }
 
     /** = the year this rhino was born. */
-
     public int getYOB() {
         return year;
     }
 
     /** = (pointer to) the object for mother of this rhino. */
-
     public Rhino getMom() {
         return mom;
     }
 
     /** = (pointer to) the object for father of this rhino. */
-
     public Rhino getPop() {
         return pop;
     }
 
     /** = the number of known children of this rhino. */
-
     public int numChildren() {
         return children;
     }
@@ -133,9 +104,7 @@ public class Rhino {
 
     /** Set the rhino's mom to mother. Precondition: this rhino's mom is null and mother is not null
      * and mother is female. */
-
     public void setMom(Rhino mother) {
-
         assert mom == null;
         assert mother != null;
         assert mother.isFemale() == true;
@@ -146,7 +115,6 @@ public class Rhino {
      * null and father is male. */
 
     public void setPop(Rhino father) {
-
         assert pop == null;
         assert father != null;
         assert father.isFemale() == false;
