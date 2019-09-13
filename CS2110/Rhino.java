@@ -1,8 +1,10 @@
 /** NetId: amd439, hl943 Time spent: 06 hours 30 minutes
  *
  * What I thought about this assignment:
- *
- *
+ *I think this assignment did a good job of having us put what we learned in lecture and recitation into practice
+ *Adjusting to Java's syntax was a hassle, but something that we caught onto quickly
+ *Plus, the JUnit testing is very helpful for testing our code
+ 
  * An instance maintains info about the Rhino. */
 
 public class Rhino {
@@ -16,16 +18,16 @@ public class Rhino {
     /** Year of birth. Can be any integer. */
     private int year;
 
-    /** Month of birth. 1 for Jan, 2 for Feb, …, 12 for Dec. */
+    /** Month of birth. 1 for Jan, 2 for Feb, â€¦, 12 for Dec. */
     private int month;
 
     /** Number of known children of this Rhino */
     private int children;
 
-    /** Mother of this rhino —null if unknown. */
+    /** Mother of this rhino â€”null if unknown. */
     private Rhino mom;
 
-    /** Father of this rhino —null if unknown. */
+    /** Father of this rhino â€”null if unknown. */
     private Rhino pop;
 
     /** Constructor: a new Rhino with name n, birth year y, birth month m, and gender g. * Its
