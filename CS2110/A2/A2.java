@@ -295,7 +295,14 @@ public class A2 {
 //                if (A2.isCat(s, s.substring(j, i + j + 1))) { return s.substring(j, i + j + 1); }
 //            }
 //        }
-        return "";
+        
+       for (int k = 1; k < s.length(); k = k +1) {
+            String x = s.substring(0, k);
+            //Return x if s = x+x..x
+            if (isCat(s,x)) return x; 
+        }
+        
+        return s;
     }
 
     public static void main(String[] args) {
