@@ -11,13 +11,13 @@ public class Rhino {
     private char gender;
     /** Year of birth. Can be any integer. */
     private int year;
-    /** Month of birth. 1 for Jan, 2 for Feb, …, 12 for Dec. */
+    /** Month of birth. 1 for Jan, 2 for Feb, â€¦, 12 for Dec. */
     private int month;
     /** Number of known children of this Rhino */
     private int children;
-    /** Mother of this rhino —null if unknown. */
+    /** Mother of this rhino â€”null if unknown. */
     private Rhino mom;
-    /** Father of this rhino —null if unknown. */
+    /** Father of this rhino â€”null if unknown. */
     private Rhino pop;
 
     /** Constructor: a new Rhino with name n, birth year y, birth month m, and gender g. * Its
@@ -48,9 +48,11 @@ public class Rhino {
     public Rhino(String n, int y, int m, char g, Rhino mother, Rhino father) {
         this(n, y, m, g);
         assert mother != null;
-        assert mother.isFemale() == true;
+        assert mother.isFemale();
         assert father != null;
         assert father.isFemale() == false;
+        mother = mom;
+        father = pop;
     }
 
 //Group A methods
